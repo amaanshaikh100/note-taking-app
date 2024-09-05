@@ -1,6 +1,9 @@
 import { useState } from "react";
 import allLists from "./lib/data.js";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // import Form from "./components/Form/Form.jsx";
 import Search from "./components/Search/Search.jsx";
 import Card from "./components/Card/Card.jsx";
@@ -14,6 +17,7 @@ function App() {
   const [lists, setLists] = useState(allLists);
 
   function handleSubmitList(list) {
+    toast("Your list has been added.");
     setLists((prev) => [...prev, list]);
   }
 
@@ -23,15 +27,16 @@ function App() {
         list.id === id ? { ...list, isCompleted: !list.isCompleted } : list
       )
     );
-    console.log(lists);
   }
 
   function handleDelete(id) {
+    toast("Your list has been deleted.");
     setLists((prev) => prev.filter((list) => list.id !== id));
   }
 
   return (
     <div className="container">
+      <ToastContainer />
       <div className="dashboard">
         <UserDashboard onSubmitList={handleSubmitList} />
       </div>
