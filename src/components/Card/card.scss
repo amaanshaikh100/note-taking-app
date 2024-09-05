@@ -1,0 +1,10 @@
+.listContainer {
+  background-color: rgb(228, 228, 228);
+  padding: 30px 60px;
+  overflow: scroll;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  display: flex;
+  row-gap: 30px;
+  justify-content: space-between;
+}

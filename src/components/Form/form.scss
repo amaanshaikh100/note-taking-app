@@ -1,0 +1,67 @@
+.formContainer {
+  width: 100%;
+  background-color: #fff;
+  padding: 30px 60px;
+  border-radius: 8px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    label {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .input-heading {
+      width: 30%;
+      height: 45px;
+      font-size: 18px;
+      border: 1px solid black;
+      border-radius: 20px;
+      padding-left: 12px;
+    }
+
+    div {
+      label {
+        display: block;
+      }
+    }
+
+    .textContainer {
+      textarea {
+        font-size: 18px;
+        padding: 10px 14px;
+        width: 500px;
+        height: 150px;
+        resize: none;
+        overflow: scroll;
+      }
+    }
+
+    .priorityContainer {
+      select {
+        font-size: 14px;
+        background-color: #393e44;
+        padding: 6px 10px;
+        color: #fff;
+        border-radius: 8px;
+        cursor: pointer;
+        text-transform: capitalize;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      width: 100px;
+      height: 32px;
+      border-radius: 8px;
+      margin-top: 8px;
+      background-color: #393e44;
+      color: #fff;
+    }
+  }
+}
