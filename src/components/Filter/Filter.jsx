@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./filter.scss";
 
 function Filter({ filter, setFilter }) {

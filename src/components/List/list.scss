@@ -1,29 +1,78 @@
 .list {
-  background-color: #fff;
-  padding: 20px 14px;
-  border-radius: 6px;
-  height: 300px;
-  width: 400px;
+  background-color: #dedbdb3f;
+  padding: 24px 20px;
+  height: 450px;
+  width: 100%;
   gap: 20px;
 
+  display: flex;
+  flex-direction: column;
+
+  .high {
+    background-color: #a3fe7548;
+    color: #379707;
+  }
+
+  .medium {
+    background-color: #70c6fb27;
+    color: rgb(9, 108, 238);
+  }
+
+  .low {
+    background-color: #b4b4b445;
+    color: #1e1717;
+  }
+
+
+  p {
+    flex: 1;
+    height: 100%;
+    /* background-color: red; */
+    overflow: scroll;
+  }
+
+  .priority {
+    font-size: 12px;
+    display: block;
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    padding: 6px 0;
+    text-transform: capitalize;
+    border-radius: 50px;
+  }
+
+  .date {
+    display: block;
+    font-size: 14px;
+    color: #5d5d5d;
+  }
+
   .btnsContainer {
+    justify-content: flex-end;
     display: flex;
 
-    a {
-      color: #fff;
-      margin-top: 10px;
-      border-radius: 6px;
-      padding: 10px 16px;
+    button {
+      padding: 10px 18px;
+      outline: none;
+      border: none;
+      cursor: pointer;
     }
 
     .complete {
-      background-color: green;
-      margin-right: 8px;
+      background-color: #9effa355;
+      color: #01a241;
+      margin-right: 18px;
     }
 
     .delete {
-      background-color: red;
+      background-color: #ff848445;
+      color: #fc0808;
     }
 
   }
+}
+
+.list-completed {
+  background-color: #0cab1426;
 }

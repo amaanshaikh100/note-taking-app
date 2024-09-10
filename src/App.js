@@ -4,16 +4,16 @@ import allLists from "./lib/data.js";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// import Form from "./components/Form/Form.jsx";
+import Form from "./components/Form/Form.jsx";
+import Stats from "./components/Stats/Stats.jsx";
 import Search from "./components/Search/Search.jsx";
 import Card from "./components/Card/Card.jsx";
 import Filter from "./components/Filter/Filter.jsx";
-import UserDashboard from "./UserDashboard/UserDashboard.jsx";
 
 import "./index.css";
 
 function App() {
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState("pending");
   const [lists, setLists] = useState(allLists);
 
   function handleSubmitList(list) {
@@ -35,20 +35,19 @@ function App() {
   }
 
   return (
-    <div className="container">
+    <div>
       <ToastContainer />
-      <div className="dashboard">
-        <UserDashboard onSubmitList={handleSubmitList} />
+      <h1 className="heading-main">Note Taking App 📝</h1>
+      <div className="list-detail-container">
+        <Form onSubmitList={handleSubmitList} />
+        {/* <Stats lists={lists} /> */}
       </div>
 
-      <div className="list-config">
-        <div className="search">
-          <Search />
-        </div>
-        <div className="filter">
-          <Filter filter={filter} setFilter={setFilter} />
-        </div>
+      <div className="list-filter-container">
+        <Search allLists={allLists} />
+        <Filter filter={filter} setFilter={setFilter} />
       </div>
+
       <Card
         filter={filter}
         allLists={lists}

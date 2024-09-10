@@ -1,19 +1,25 @@
 .filter-form {
+  flex: 2;
   padding: 0px 60px;
 
   label {
-    font-size: 21px;
+    font-size: 18px;
     margin-bottom: 8px;
-    display: block;
+    margin-right: 14px;
   }
 
   select {
     font-size: 14px;
-    background-color: #393e44;
+    background-color: #fff;
     padding: 6px 10px;
-    color: #fff;
-    border-radius: 8px;
+    border: 1px solid #b7b7b7;
+    color: #000000;
     cursor: pointer;
     text-transform: capitalize;
+  }
+
+  select:focus {
+    outline: none;
+    border: 3px solid #6BDA70;
   }
 }

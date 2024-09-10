@@ -1,27 +1,28 @@
 import { useState } from "react";
 import "./search.scss";
 
-function Search() {
-  const [query, setQuery] = useState("");
+function Search({ allLists, query, setQuery, onSearch }) {
+  const [searchQuery, setSearchQuery] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(query);
-
-    setQuery("");
   }
 
   return (
-    <form onSubmit={handleSubmit} className="form-search">
-      <label htmlFor="search"></label>
-      <input
-        id="search"
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search..."
-      />
-    </form>
+    <>
+      <form onSubmit={handleSubmit} className="form-search">
+        <label htmlFor="search"></label>
+        <input
+          id="search"
+          type="text"
+          value={query}
+          onChange={(e) => setQuery((e) => e.target.value)}
+          placeholder="Search Your List..."
+        />
+
+        <button>Search</button>
+      </form>
+    </>
   );
 }
 

@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./form.scss";
 
 const priorityStatus = ["high", "medium", "low"];
-const maxWordAllowed = 10;
+const maxWordAllowed = 300;
 
 function Form({ onSubmitList }) {
   const [heading, setHeading] = useState("");
@@ -35,6 +35,7 @@ function Form({ onSubmitList }) {
 
     setHeading("");
     setText("");
+    setWordCount(0);
 
     onSubmitList(newList);
   }
@@ -43,7 +44,7 @@ function Form({ onSubmitList }) {
     <div className="formContainer">
       <form onSubmit={handleSubmit}>
         <div className="headingContainer">
-          <label htmlFor="heading">Heading</label>
+          <label htmlFor="heading">Title</label>
           <input
             className="input-heading"
             id="heading"
@@ -68,7 +69,7 @@ function Form({ onSubmitList }) {
         </div>
 
         {wordCount > maxWordAllowed ? (
-          <span className="word-limit">
+          <span className="word-limit limit-exceed">
             Word Limit Exceeded {maxWordAllowed}/{wordCount}
           </span>
         ) : (

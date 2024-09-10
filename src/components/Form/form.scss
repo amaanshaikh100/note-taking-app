@@ -1,25 +1,28 @@
 .formContainer {
-  width: 100%;
-  background-color: #fff;
-  padding: 30px 60px;
-  border-radius: 8px;
+  flex: 3;
 
   form {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
 
     label {
       font-size: 21px;
       margin-bottom: 8px;
     }
 
+    .word-limit {
+      display: inline-block;
+      width: 90%;
+      text-align: right;
+    }
+
+    .limit-exceed {
+      color: red;
+    }
+
     .input-heading {
-      width: 30%;
+      width: 90%;
       height: 45px;
       font-size: 18px;
-      border: 1px solid black;
-      border-radius: 20px;
+      border: 1px solid #b7b7b7;
       padding-left: 12px;
     }
 
@@ -27,14 +30,33 @@
       label {
         display: block;
       }
+
+
+      input:focus {
+        outline: none;
+        border: 3px solid #6BDA70;
+      }
+
+      textarea:focus {
+        outline: none;
+        border: 3px solid #6BDA70;
+      }
+
+      select:focus {
+        outline: none;
+        border: 3px solid #6BDA70;
+      }
     }
 
     .textContainer {
+      margin-top: 15px;
+
       textarea {
-        font-size: 18px;
+        border: 1px solid #b7b7b7;
         padding: 10px 14px;
-        width: 500px;
-        height: 150px;
+        font-size: 18px;
+        width: 90%;
+        height: 125px;
         resize: none;
         overflow: scroll;
       }
@@ -43,24 +65,24 @@
     .priorityContainer {
       select {
         font-size: 14px;
-        background-color: #393e44;
+        background-color: #fff;
         padding: 6px 10px;
-        color: #fff;
-        border-radius: 8px;
+        border: 1px solid #b7b7b7;
+        color: #000000;
         cursor: pointer;
         text-transform: capitalize;
       }
     }
 
     button {
+      display: block;
       cursor: pointer;
       text-transform: uppercase;
       letter-spacing: 2px;
       width: 100px;
       height: 32px;
-      border-radius: 8px;
-      margin-top: 8px;
-      background-color: #393e44;
+      margin-top: 18px;
+      background-color: #000000;
       color: #fff;
     }
   }

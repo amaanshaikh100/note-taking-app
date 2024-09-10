@@ -9,25 +9,35 @@ function List({ list, onDelete, onComplete }) {
   const formattedDate = `${day}/${month}/${year}`;
 
   return (
-    <div className="list">
-      <span>Created on: {formattedDate}</span>
+    <div className={`list ${list.isCompleted ? "list-completed" : ""}`}>
+      <span className={`priority ${list.priority}`}>
+        {list.priority} Priority
+      </span>
+
+      <span className="date">
+        <b>Created on: </b>
+        {formattedDate}
+      </span>
+
       <h2>{list.heading}</h2>
+
       <p>{list.text}</p>
 
       <div className="btnsContainer">
-        <button
-          href="#"
-          className="complete"
-          onClick={() => onComplete(list.id)}
-        >
-          Completed
-        </button>
+        {!list.isCompleted ? (
+          <button
+            href="#"
+            className="complete"
+            onClick={() => onComplete(list.id)}
+          >
+            Completed
+          </button>
+        ) : null}
+
         <button href="#" className="delete" onClick={() => onDelete(list.id)}>
           Delete
         </button>
       </div>
-
-      <span>Priority: {list.priority}</span>
     </div>
   );
 }

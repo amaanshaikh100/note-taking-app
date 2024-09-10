@@ -14,6 +14,12 @@ function Card({ allLists, onComplete, onDelete, filter }) {
     filteredLists = filteredLists.filter((list) => list.isCompleted === false);
   }
 
+  // if (query) {
+  //   filteredLists = filteredLists.filter((list) =>
+  //     list.heading.toLowerCase().includes(query)
+  //   );
+  // }
+
   return (
     <div className="listContainer">
       {filteredLists.map((list) => {
