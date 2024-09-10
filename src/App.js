@@ -44,7 +44,7 @@ function App() {
       </div>
 
       <div className="list-filter-container">
-        <Search allLists={allLists} />
+        {/* <Search allLists={allLists} /> */}
         <Filter filter={filter} setFilter={setFilter} />
       </div>
 

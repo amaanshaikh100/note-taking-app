@@ -29,6 +29,7 @@ div {
   .list-filter-container {
     display: flex;
     align-items: center;
+    margin-top: 50px;
   }
 }
 
